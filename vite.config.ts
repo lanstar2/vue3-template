@@ -2,7 +2,6 @@ import { defineConfig, loadEnv } from 'vite'
 import type { ConfigEnv } from 'vite'
 import { resolve } from 'path'
 import vue from '@vitejs/plugin-vue'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import { viteMockServe } from 'vite-plugin-mock'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -36,7 +35,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         reactivityTransform: true,
       }),
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [],
         // 自定引入 Vue VueRouter API,如果还需要其他的可以自行引入
         imports: ['vue', 'vue-router'],
         // 调整自动引入的文件位置
@@ -50,7 +49,7 @@ export default defineConfig(({ mode }: ConfigEnv) => {
         },
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [],
         dts: 'src/type/components.d.ts',
       }),
       // 配置mock

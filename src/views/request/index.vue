@@ -12,9 +12,9 @@ const handleAgainRequest = () => {
 </script>
 
 <template>
-  <el-button type="primary" size="small" @click="handleAgainRequest">
+  <button @click="handleAgainRequest">
     重新请求
-  </el-button>
+  </button>
 
   <div>{{ loading }}</div>
   <div>{{ data }}</div>

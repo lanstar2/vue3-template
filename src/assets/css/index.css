@@ -1,4 +1,2 @@
 /* 提高优先级 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';

@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import { viteMockServe } from 'vite-plugin-mock'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig(({ mode }: ConfigEnv) => {
   const env = loadEnv(mode, process.cwd())
@@ -30,10 +31,8 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       },
     },
     plugins: [
-      vue({
-        // 默认开启响应性语法糖
-        reactivityTransform: true,
-      }),
+      vue(),
+      tailwindcss(),
       AutoImport({
         resolvers: [],
         // 自定引入 Vue VueRouter API,如果还需要其他的可以自行引入
@@ -55,7 +54,6 @@ export default defineConfig(({ mode }: ConfigEnv) => {
       // 配置mock
       viteMockServe({
         mockPath: '/mock',
-        localEnabled: true,
       }),
     ],
   }

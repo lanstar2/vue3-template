@@ -1,5 +1,5 @@
 export interface IGetParams {
-  apiKey: string
+  token?: string
 }
 export interface IGetRes {
   area: string
@@ -7,6 +7,12 @@ export interface IGetRes {
   areaid: string
   dayList: any[]
 }
+export interface IMessageHistoryRes {
+  code: number
+  data: any[]
+  msg: string
+}
+
 
 export interface IMockLoginRes {
   name: string

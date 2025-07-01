@@ -1,0 +1,17 @@
+CREATE TABLE t_order_history (
+  id BIGINT NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+  user_id BIGINT DEFAULT NULL COMMENT '用户ID',
+  draw_datetime VARCHAR(64) DEFAULT NULL COMMENT '开奖时间（字符串格式）',
+  show_frontend INT DEFAULT NULL COMMENT '前端显示标识',
+  period_no VARCHAR(64) DEFAULT NULL COMMENT '期号',
+  bet_count VARCHAR(64) DEFAULT NULL COMMENT '投注数量',
+  bet_money VARCHAR(64) DEFAULT NULL COMMENT '投注金额',
+  return_water VARCHAR(64) DEFAULT NULL COMMENT '返水金额',
+  win_money VARCHAR(64) DEFAULT NULL COMMENT '中奖金额',
+  profit_loss_money VARCHAR(64) DEFAULT NULL COMMENT '盈亏金额',
+  create_time DATETIME DEFAULT NULL COMMENT '创建时间',
+  total_date_start VARCHAR(32) DEFAULT NULL COMMENT '统计起始日期',
+  total_date_end VARCHAR(32) DEFAULT NULL COMMENT '统计结束日期',
+  PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单历史表';
+

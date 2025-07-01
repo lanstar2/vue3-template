@@ -14,3 +14,22 @@ export interface IUser {
   userDetail?: IUserDetail
   curId: number
 }
+export interface IUserInfo {
+  avatar: string
+  nickname: string
+  id: number
+  points: string
+}
+export interface IMessage {
+  alarm: boolean
+  content: string
+  fromId?: number
+  createdAt: number
+  adminId: number
+  id: number
+  imgUrl: string
+  msgType: number
+  name: string
+  order_id: string
+  fromUser: number
+}
